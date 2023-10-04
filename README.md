@@ -17,4 +17,4 @@ You may also see any lint errors in the console.
 
 ### `bun backend`
 
-Launches the backend.\
+Launches the backend.
