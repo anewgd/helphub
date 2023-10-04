@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: local("OpenSans-Regular") url("../fonts/OpenSans-Regular.ttf")
+    format("ttf");
+}
+
+.main-container {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  display: flex;
+  margin: 10px 50px;
+  padding: 21px;
+  border: black solid 4px;
+  border-radius: 10px;
+}
+
+form {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+}
+
+form > div {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: larger;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  border: none;
+}
+
+.button-container {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: larger;
+}
+
+.button {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 7px;
+  background-color: cadetblue;
+  border: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: aquamarine;
+}

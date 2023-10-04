@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: local("OpenSans-Regular") url("../fonts/OpenSans-Regular.ttf")
+    format("ttf");
+}
+
+.admin-container {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.ticket-container {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: larger;
+  font-weight: 500;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.priority-container {
+  width: 100%;
+}
+
+.priority-container > select {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: small;
+  font-weight: 400;
+  width: 50%;
+  padding: 10px 10px;
+  border: none;
+  border: none;
+  border-radius: 4px;
+}
+
+.agent-selection-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.agent-selection-container > select {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: small;
+  font-weight: 400;
+  width: 50%;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.update-button-container {
+  width: 100%;
+}
+
+.update-button {
+  width: 50%;
+  padding: 10px;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: small;
+  font-weight: 500;
+  padding: 7px;
+  background-color: cadetblue;
+  border: none;
+  border-radius: 5px;
+}
