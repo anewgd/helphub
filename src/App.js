@@ -5,6 +5,7 @@ import Login from "./components/Login.js";
 import Agent from "./components/Agent";
 import Client from "./components/Client";
 import Admin from "./components/Admin";
+import Register from "./components/Register";
 import {
   BrowserRouter as Router,
   Route,
@@ -30,6 +31,7 @@ export default class App extends React.Component {
             <Route exact path="/admin" element={<Admin />} />
             <Route exact path="/agent" element={<Agent />} />
             <Route exact path="/client" element={<Client />} />
+            <Route exact path="/register" element={<Register />} />
           </Routes>
         </Router>
       </div>

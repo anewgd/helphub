@@ -12,6 +12,8 @@ import Agent from "./Agent";
 import Client from "./Client";
 
 import "../styles/Login.css";
+import logo from "../icons/Logo.svg";
+//import "../fonts/Palanquin-Bold.ttf";
 
 // export default class Login extends React.Component {
 //   constructor(props) {
@@ -178,47 +180,52 @@ export default function Login() {
   };
 
   return (
-    <div className="main-container">
-      <div className="title">
+    <>
+      <div className="login-main-container">
+        {/* <div className="title">
         <p>CRM App</p>
+      </div> */}
+        <div className="login-logo-container">
+          <img src={logo} alt="helphub logo" />
+        </div>
+        {completed ? <h1>User found</h1> : <></>}
+        <form className="login-form">
+          <div className="field-container">
+            <input
+              className="username-field"
+              type="text"
+              name="username"
+              placeholder="Username"
+              onChange={(e) => handleChange(e)}
+              value={username}
+            />
+          </div>
+          <div className="field-container">
+            <input
+              className="password-field"
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="button-container">
+            <input
+              className="button"
+              type="submit"
+              value="Login"
+              onClick={(e) => handleSubmit(e)}
+            />
+          </div>
+        </form>
+        <div className="redirect-container">
+          <p>
+            Don't have an account? Click{" "}
+            <a href="http://localhost:3000/register">Here</a> to register.
+          </p>
+        </div>
       </div>
-      {completed ? <h1>User found</h1> : <></>}
-      <form>
-        <div>
-          <label>
-            Username:
-            <div className="input-container">
-              <input
-                type="text"
-                name="username"
-                onChange={(e) => handleChange(e)}
-                value={username}
-              />
-            </div>
-          </label>
-        </div>
-        <div>
-          <label>
-            Password:
-            <div className="input-container">
-              <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-          </label>
-        </div>
-        <div className="button-container">
-          <input
-            className="button"
-            type="submit"
-            value="Login"
-            onClick={(e) => handleSubmit(e)}
-          />
-        </div>
-      </form>
-    </div>
+    </>
   );
 }

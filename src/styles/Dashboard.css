@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Palanquin";
+  src: url("../fonts/Palanquin-Bold.ttf") format("truetype");
+}
+
+.admin-Dashboard-container {
+  width: 1500px;
+  height: 700px;
+
+  margin: 0 auto;
+
+  background-color: #e9e9e9;
+  border-radius: 10px;
+}

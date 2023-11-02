@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Palanquin";
+  src: url("../fonts/Palanquin-Bold.ttf") format("truetype");
+}
+
+.admin-CreateUsers-container {
+  width: 1500px;
+  height: 700px;
+
+  margin: 0 auto;
+
+  background-color: #e9e9e9;
+  border-radius: 10px;
+}
+
+.admin-CreateUsers-form {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 520px 520px;
+  grid-template-rows: 100px 100px 100px 100px;
+}
+
+.admin-CreateUsers-form-field {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.admin-CreateUsers-form-field > input,
+.admin-CreateUsers-form-field > select {
+  font-family: "Palanquin";
+  font-size: 18px;
+  margin: auto 0;
+  width: 500px;
+  height: 80px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.admin-CreateUsers-form-field > input:focus,
+.admin-CreateUsers-form-field > select:focus {
+  outline: none;
+  background-color: aliceblue;
+}
+.admin-CreateUsers-form-field > input[type="submit"] {
+  background-color: #6b73ac;
+  border-radius: 10px;
+}
+
+.admin-CreateUsers-form-field > input[type="submit"]:hover {
+  background-color: #6b73ff;
+}
+.admin-CreateUsers-form-field > input[type="submit"]:active {
+  border-radius: 0%;
+}

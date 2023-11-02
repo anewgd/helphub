@@ -3,36 +3,49 @@
   src: url("../fonts/Palanquin-Bold.ttf") format("truetype");
 }
 
-.login-main-container {
+.main-container {
   position: absolute;
-  width: 600px;
-  height: 630px;
-  left: 660px;
-  top: 124px;
-  border-radius: 10px;
+  width: 1200px;
+  height: 800px;
+  left: 360px;
+  top: 76px;
+  border-radius: 20px;
   background-color: #1a2a55;
   box-shadow: 1px 1px 20px 7px rgba(0, 0, 0, 0.2);
 }
 
-.login-logo-container {
+.register-logo-container {
   margin: auto 0;
   display: flex;
+  width: 1200px;
+  height: 200px;
   justify-content: center;
-  width: 600px;
-  height: 220px;
   margin-top: -40px;
 }
 
-.login-form {
+.registration-form {
   margin-top: 90px;
 }
 
-.field-container {
+.grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 520px 520px;
+  grid-template-rows: 100px 100px 100px;
+}
+
+.registration-field-container {
   display: flex;
   justify-content: center;
-  margin: 20px;
 }
-.field-container > input {
+
+.registration-field-container > input:focus {
+  outline: none;
+  background-color: aliceblue;
+}
+
+.registration-field-container > input {
   font-family: "Palanquin";
   font-size: 18px;
   margin: auto 0;
@@ -43,15 +56,10 @@
   border-radius: 10px;
 }
 
-.field-container > input:focus {
-  outline: none;
-  background-color: aliceblue;
-}
-
-/* Login Group */
 .button-container {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .button-container > input {
@@ -71,7 +79,9 @@
   border-radius: 0px;
 }
 
-.redirect-container {
+.registration-redirect-container {
+  display: flex;
+  justify-content: center;
   margin-left: 20px;
   font-family: "Palanquin";
   font-size: 16px;
