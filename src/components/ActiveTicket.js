@@ -6,6 +6,8 @@ import { BiSearch } from "react-icons/bi";
 
 import { useReactTable } from "@tanstack/react-table";
 
+import ActiveTicketTable from "./tables/ActiveTicketTable";
+
 import { useEffect, useMemo } from "react";
 import axios from "axios";
 
@@ -26,6 +28,9 @@ export default function ActiveTicket() {
             />
             <BiSearch size={50} />
           </div>
+        </div>
+        <div className="client-ActiveTicket-table-container">
+          <ActiveTicketTable />
         </div>
       </div>
     </>

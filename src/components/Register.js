@@ -106,7 +106,7 @@ export default function Register() {
           </div>
         </form>
         <div className="registration-redirect-container">
-          <a href="http://localhost:3000">Go to Login</a>
+          <a href="/">Go to Login</a>
         </div>
       </div>
     </>

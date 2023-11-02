@@ -15,7 +15,7 @@ export default function Client() {
   const [tickets, setTickets] = useState([]);
   const [message, setMessage] = useState("");
 
-  const [createTicketSelected, setCreateTicketSelected] = useState(false);
+  const [createTicketSelected, setCreateTicketSelected] = useState(true);
   const [activeTicketSelected, setActiveTicketSelected] = useState(false);
   const [allTicketsSelected, setAllTicketsSelected] = useState(false);
 

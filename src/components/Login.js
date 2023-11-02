@@ -221,8 +221,8 @@ export default function Login() {
         </form>
         <div className="redirect-container">
           <p>
-            Don't have an account? Click{" "}
-            <a href="http://localhost:3000/register">Here</a> to register.
+            Don't have an account? Click <a href="/register">Here</a> to
+            register.
           </p>
         </div>
       </div>
