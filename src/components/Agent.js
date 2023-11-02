@@ -16,7 +16,7 @@ export default function Agent() {
   const [comment, setComment] = React.useState("");
   const [status, setStatus] = React.useState("");
 
-  const [assignedTicketSelected, setAssignedTicketSelected] = useState(false);
+  const [assignedTicketSelected, setAssignedTicketSelected] = useState(true);
   const [allTicketsSelected, setAllTicketsSelected] = useState(false);
   const user = localStorage.getItem("currentUser");
   const currentUser = JSON.parse(user);

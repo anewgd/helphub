@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Palanquin";
+  src: url("../../fonts/Palanquin-Bold.ttf") format("truetype");
+}
+
+table {
+  margin: 0 auto;
+}
+.table-container {
+  width: 1400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.table-header {
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  width: 1400px;
+  background-color: #1a2a55;
+  justify-content: left;
+  border-radius: 5px;
+}
+
+.table-header > th {
+  width: 350px;
+  font-family: "Palanquin";
+  font-size: 14px;
+  color: white;
+  border-right: 1px solid white;
+}
+
+.table-row {
+  padding: 3px;
+  display: flex;
+  margin: 10px 0;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.table-row > td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Palanquin";
+  font-size: 14px;
+  width: 350px;
+}
+.table-row > td > p {
+  margin: 0;
+}

@@ -22,7 +22,7 @@ export default function Admin() {
   const [selectedPriority, setPriority] = useState("");
   const [selectedAgent, setAgent] = useState("");
 
-  const [assignTicketSelected, setAssignTicketSelected] = useState(false);
+  const [assignTicketSelected, setAssignTicketSelected] = useState(true);
   const [activeTicketSelected, setActiveTicketSelected] = useState(false);
   const [allTicketsSelected, setAllTicketsSelected] = useState(false);
   const [createUsersSelected, setCreateUsersSelected] = useState(false);
