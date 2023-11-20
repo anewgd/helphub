@@ -36,7 +36,7 @@ const columns = [
   },
 ];
 
-export default function ActiveTicketTable() {
+export default function AllTicketsTable() {
   const [tableData, setTableData] = useState(data);
   const [columnFilters, setColumnFilters] = useState([]);
 
