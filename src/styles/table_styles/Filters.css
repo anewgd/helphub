@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Palanquin";
+  src: url("../../fonts/Palanquin-Bold.ttf") format("truetype");
+}
+
+.client-ActiveTicket-searchbar-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.client-ActiveTicket-searchbar {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  align-items: center;
+  border: solid 1px gray;
+  border-radius: 5px;
+
+  padding: 3px;
+}
+
+.client-ActiveTicket-searchbar > input {
+  font-family: "Palanquin";
+  font-size: 18px;
+  margin-right: 5px;
+  width: 600px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  background: transparent;
+}
+
+.client-ActiveTicket-searchbar > input:focus {
+  outline: none;
+}
+
+.client-filter-icon-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid gray;
+  margin: 5px;
+  margin-left: 7px;
+  border-radius: 5px;
+}
+
+.filter-icon {
+  justify-self: center;
+  align-self: center;
+}
+
+.filter-icon:hover {
+  cursor: pointer;
+}
+
+.client-filter-type-container {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.client-filter-type-container > select {
+  background: transparent;
+  font-family: "Palanquin";
+  font-size: 18px;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 2px;
+}
+
+.client-filter-type-container > select:focus {
+  outline: none;
+}

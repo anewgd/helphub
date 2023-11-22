@@ -7,12 +7,14 @@ table {
   margin: 0 auto;
 }
 .table-container {
+  overflow: auto;
   width: 1400px;
   display: block;
   margin: 0 auto;
 }
 
 .table-header {
+  overflow: auto;
   margin: 0 auto;
   margin-top: 20px;
   display: flex;
@@ -23,11 +25,35 @@ table {
 }
 
 .table-header > th {
+  overflow: auto;
+  position: relative;
   width: 350px;
   font-family: "Palanquin";
   font-size: 14px;
   color: white;
-  border-right: 1px solid white;
+}
+
+.resizer {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5px;
+  background-color: #fff;
+  cursor: col-resize;
+  user-select: none;
+  touch-action: none;
+  border-radius: 6px;
+}
+
+.resizer.resizing {
+  background-color: green;
+  opacity: 1;
+}
+
+*:hover > .resizer {
+  opacity: 1;
 }
 
 .table-row {
@@ -35,7 +61,7 @@ table {
   display: flex;
   margin: 10px 0;
   background-color: white;
-  border: 1px solid red;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
@@ -49,4 +75,8 @@ table {
 }
 .table-row > td > p {
   margin: 0;
+}
+
+.table-row:hover {
+  background-color: antiquewhite;
 }
