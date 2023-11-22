@@ -22,44 +22,44 @@ export default function Client() {
   const user = localStorage.getItem("currentUser");
   const currentUser = JSON.parse(user);
 
-  useEffect(() => {
-    axios({
-      method: "GET",
-      url: "client/" + currentUser.username,
-    })
-      .then((result) => {
-        console.log(result.data);
-        setTickets(result.data.reverse());
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [message]);
-  const onSubmit = (e) => {
-    e.preventDefault();
+  // useEffect(() => {
+  //   axios({
+  //     method: "GET",
+  //     url: "client/" + currentUser.username,
+  //   })
+  //     .then((result) => {
+  //       console.log(result.data);
+  //       setTickets(result.data.reverse());
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [message]);
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
 
-    //const user = localStorage.getItem("currentUser");
+  //   //const user = localStorage.getItem("currentUser");
 
-    console.log(`Submitted ${newTicket} by ${currentUser.username}`);
+  //   console.log(`Submitted ${newTicket} by ${currentUser.username}`);
 
-    const newItem = {
-      description: newTicket,
-      createdBy: currentUser.username,
-    };
+  //   const newItem = {
+  //     description: newTicket,
+  //     createdBy: currentUser.username,
+  //   };
 
-    axios({
-      method: "POST",
-      url: "/client",
-      data: newItem,
-    })
-      .then((result) => {
-        console.log(result.data.message);
-        setMessage(result.data.message);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  //   axios({
+  //     method: "POST",
+  //     url: "/client",
+  //     data: newItem,
+  //   })
+  //     .then((result) => {
+  //       console.log(result.data.message);
+  //       setMessage(result.data.message);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   const handleChange = (e) => {
     setNewTicket(e.target.value);
