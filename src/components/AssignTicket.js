@@ -10,11 +10,7 @@ export default function AssignTicket() {
 
   return (
     <>
-      <div className="admin-AssignTicket-container">
-        <div className="admin-AssignTicket-searchbar-container">
-          Assign Ticket
-        </div>
-      </div>
+      <div className="admin-AssignTicket-container">Assign Ticket</div>
     </>
   );
 }

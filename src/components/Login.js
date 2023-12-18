@@ -113,6 +113,7 @@ import logo from "../icons/Logo.svg";
 // }
 
 import { useState } from "react";
+import { BiUser, BiShow, BiHide } from "react-icons/bi";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -181,51 +182,67 @@ export default function Login() {
 
   return (
     <>
-      <div className="login-main-container">
-        {/* <div className="title">
+      <main className="login-container">
+        <section className="login-logo-container">
+          <img src={logo} alt="helphub logo" />
+        </section>
+        <section className="login-content-container">
+          <div className="login-form-container">
+            <h1>Welcome! Login to your account.</h1>
+            {completed ? <h1>User found</h1> : <></>}
+            <form className="login-form">
+              <div className="form-field">
+                <div className="form-input">
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    name="username"
+                    value={username}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  <div className="help-icon">
+                    <BiUser />
+                  </div>
+                </div>
+              </div>
+              <div className="form-field">
+                <div className="form-input">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => handleChange(e)}
+                  />
+                  <div className="help-icon">
+                    <BiShow />
+                  </div>
+                </div>
+              </div>
+              <div className="login-button-container">
+                <input
+                  type="submit"
+                  name="login-btn"
+                  className="login-button"
+                  value="Login"
+                />
+              </div>
+            </form>
+            {/* <div className="title">
         <p>CRM App</p>
       </div> */}
-        <div className="login-logo-container">
-          <img src={logo} alt="helphub logo" />
-        </div>
-        {completed ? <h1>User found</h1> : <></>}
-        <form className="login-form">
-          <div className="field-container">
-            <input
-              className="username-field"
-              type="text"
-              name="username"
-              placeholder="Username"
-              onChange={(e) => handleChange(e)}
-              value={username}
-            />
+
+            <div className="redirect-container">
+              <div className="link">
+                <a href="#">Forgot Password?</a>
+              </div>
+              <div className="link">
+                <a href="/register">Create an account</a>
+              </div>
+            </div>
           </div>
-          <div className="field-container">
-            <input
-              className="password-field"
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div className="button-container">
-            <input
-              className="button"
-              type="submit"
-              value="Login"
-              onClick={(e) => handleSubmit(e)}
-            />
-          </div>
-        </form>
-        <div className="redirect-container">
-          <p>
-            Don't have an account? Click <a href="/register">Here</a> to
-            register.
-          </p>
-        </div>
-      </div>
+        </section>
+      </main>
     </>
   );
 }

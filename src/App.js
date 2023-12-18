@@ -40,15 +40,7 @@ export default class App extends React.Component {
 }
 
 const LoginContainer = () => (
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      position: "relative",
-      height: "600px",
-    }}
-  >
+  <div>
     <Route exact path="/" element={<Login />} />
     <Route path="/login" component={Login} />
   </div>

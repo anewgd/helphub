@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
 import "../../styles/table_styles/Filters.css";
-import { BiFilterAlt, BiSearch } from "react-icons/bi";
+import { BiFilterAlt, BiSearch, BiSolidFilterAlt } from "react-icons/bi";
+
+import FilterOptions from "./FilterOptions";
 
 export default function Filters({ columnFilters, setColumnFilters }) {
-  const [isFilterClicked, setIsFilterClicked] = useState(false);
+  const [isFilterActive, setIsFilterActive] = useState(false);
   const [selectedFilterOption, setSelectedFilterOption] =
     useState("Description");
 
@@ -26,7 +28,7 @@ export default function Filters({ columnFilters, setColumnFilters }) {
 
   const onFilterClicked = (e) => {
     console.log("filter clicked");
-    setIsFilterClicked(!isFilterClicked);
+    setIsFilterActive(!isFilterActive);
   };
 
   const handleFilterOptionChange = (e) => {
@@ -37,7 +39,7 @@ export default function Filters({ columnFilters, setColumnFilters }) {
     <>
       <div className="client-ActiveTicket-searchbar-container">
         <div className="client-ActiveTicket-searchbar">
-          <BiSearch size={28} opacity={0.5} alignmentBaseline="central" />
+          <BiSearch size="1rem" opacity={0.5} alignmentBaseline="central" />
           <input
             type="text"
             placeholder={`Search by ${selectedFilterOption}`}
@@ -47,7 +49,7 @@ export default function Filters({ columnFilters, setColumnFilters }) {
               onFilterChange(`${selectedFilterOption}`, e.target.value)
             }
           />
-          <div className="client-filter-type-container">
+          {/* <div className="client-filter-type-container">
             <select onChange={(e) => handleFilterOptionChange(e)}>
               <option default value="">
                 Search by...
@@ -56,17 +58,32 @@ export default function Filters({ columnFilters, setColumnFilters }) {
               <option value="Agent">Agent</option>
               <option value="Creation date">Date</option>
             </select>
-          </div>
+          </div> */}
           <div className="client-filter-icon-container">
-            <BiFilterAlt
-              className="filter-icon"
-              onClick={(e) => onFilterClicked(e)}
-              size={28}
-              opacity={0.5}
-              alignmentBaseline="central"
-            />
+            {isFilterActive ? (
+              <BiSolidFilterAlt
+                className="filter-icon"
+                onClick={(e) => onFilterClicked(e)}
+                size="1rem"
+                opacity={0.5}
+                alignmentBaseline="central"
+              />
+            ) : (
+              <BiFilterAlt
+                className="filter-icon"
+                onClick={(e) => onFilterClicked(e)}
+                size="1rem"
+                opacity={0.5}
+                alignmentBaseline="central"
+              />
+            )}
           </div>
         </div>
+        {isFilterActive ? (
+          <FilterOptions setSelectedFilterOption={setSelectedFilterOption} />
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );

@@ -10,6 +10,7 @@ import notification from "../icons/notification.svg";
 import CreateTicket from "./CreateTicket";
 import ActiveTicket from "./ActiveTicket";
 import AllTickets from "./AllTickets";
+import { BiNotification, BiUserCircle } from "react-icons/bi";
 export default function Client() {
   const [newTicket, setNewTicket] = useState("");
   const [tickets, setTickets] = useState([]);
@@ -84,102 +85,71 @@ export default function Client() {
         break;
     }
   };
-
   return (
     <>
-      <div className="client-titleBar">
-        <div className="client-logo-container">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className="client-title-container">Client Page</div>
-        <div className="client-notification-container">
-          <img src={notification} alt="notification icon" />
-        </div>
-        <div className="client-account-container">
-          <h4>User's Name</h4>
-        </div>
-      </div>
-      <div className="client-navBar">
-        <div
-          className="client-navBar-button"
-          id="createTicketSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: createTicketSelected ? "#1a2a55" : "white",
-            color: createTicketSelected ? "white" : "black",
-          }}
-        >
-          Create Ticket
-        </div>
-        <div
-          className="client-navBar-button"
-          id="activeTicketSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: activeTicketSelected ? "#1a2a55" : "white",
-            color: activeTicketSelected ? "white" : "black",
-          }}
-        >
-          Active Tickets
-        </div>
-        <div
-          className="client-navBar-button"
-          id="allTicketsSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: allTicketsSelected ? "#1a2a55" : "white",
-            color: allTicketsSelected ? "white" : "black",
-          }}
-        >
-          All Tickets
-        </div>
-      </div>
-      <div>
-        {createTicketSelected ? (
-          <CreateTicket />
-        ) : activeTicketSelected ? (
-          <ActiveTicket />
-        ) : allTicketsSelected ? (
-          <AllTickets />
-        ) : (
-          <></>
-        )}
-      </div>
-      {/* <div className="client-container">
-        <h3>Create Ticket</h3>
-        <p>{message}</p>
-        <form className="ticket-form" onSubmit={(e) => onSubmit(e)}>
-          <div className="description-container">
-            <textarea
-              id="newTicket"
-              type="text"
-              placeholder="Enter a description"
-              name="newTicket"
-              onChange={(e) => handleChange(e)}
-              value={newTicket}
-            />
+      <main className="main-container">
+        <section className="header-section">
+          <div className="logo-container">
+            <img src={logo} alt="logo" />
           </div>
-
-          <div className="submit-container">
-            <input
-              className="submit-button"
-              type="submit"
-              value="Create Ticket"
-            />
-          </div>
-        </form>
-
-        <h3>Tickets</h3>
-        <div className="ticket-container">
-          {tickets.map((ticket) => (
-            <div className="ticket" key={ticket._id}>
-              <p>
-                {ticket.description} - {ticket.status}
-              </p>
+          <div className="left">
+            <div className="notification-container">
+              <BiNotification size="2rem" />
             </div>
-          ))}
-        </div>
-      </div> */}
+            <div className="account-container">
+              <BiUserCircle size="2rem" />
+            </div>
+          </div>
+        </section>
+        <section className="body-section">
+          <div className="navBar">
+            <div
+              className="navBar-button"
+              id="createTicketSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: createTicketSelected ? "#1a2a55" : "white",
+                color: createTicketSelected ? "white" : "black",
+              }}
+            >
+              Create Ticket
+            </div>
+            <div
+              className="navBar-button"
+              id="activeTicketSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: activeTicketSelected ? "#1a2a55" : "white",
+                color: activeTicketSelected ? "white" : "black",
+              }}
+            >
+              Active Tickets
+            </div>
+            <div
+              className="navBar-button"
+              id="allTicketsSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: allTicketsSelected ? "#1a2a55" : "white",
+                color: allTicketsSelected ? "white" : "black",
+              }}
+            >
+              All Tickets
+            </div>
+          </div>
+          <div>
+            {createTicketSelected ? (
+              <CreateTicket />
+            ) : activeTicketSelected ? (
+              <ActiveTicket />
+            ) : allTicketsSelected ? (
+              <AllTickets />
+            ) : (
+              <></>
+            )}
+          </div>
+        </section>
+      </main>
     </>
   );
 }

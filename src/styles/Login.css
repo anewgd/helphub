@@ -3,78 +3,151 @@
   src: url("../fonts/Palanquin-Bold.ttf") format("truetype");
 }
 
-.login-main-container {
-  position: absolute;
-  width: 600px;
-  height: 630px;
-  left: 660px;
-  top: 124px;
-  border-radius: 10px;
-  background-color: #1a2a55;
-  box-shadow: 1px 1px 20px 7px rgba(0, 0, 0, 0.2);
+.login-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  font-family: "Palanquin";
 }
 
 .login-logo-container {
-  margin: auto 0;
+  grid-column: 1 / span 1;
   display: flex;
   justify-content: center;
-  width: 600px;
-  height: 220px;
-  margin-top: -40px;
+  align-items: center;
+  background: #151035;
+  height: 100vh;
+  flex-direction: column;
 }
 
-.login-form {
-  margin-top: 90px;
+.login-logo-container > img {
+  width: 50%;
+  height: 50%;
 }
 
-.field-container {
+.login-content-container {
+  grid-column: 2 / span 1;
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 20px;
+  flex-direction: column;
 }
-.field-container > input {
-  font-family: "Palanquin";
-  font-size: 18px;
-  margin: auto 0;
-  width: 500px;
-  height: 80px;
+
+.login-form-container {
+  width: 412px;
+  flex-direction: column;
   text-align: center;
-  border: none;
-  border-radius: 10px;
 }
 
-.field-container > input:focus {
+.login-form-container h1 {
+  font-size: 2.25rem;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 2rem;
+}
+.login-content-container .login-form-contianer form {
+  margin: 2rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 1px solid white;
+}
+
+.form-field {
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #151035;
+  height: 40px;
+  border-radius: 3px;
+}
+
+.form-input input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  padding-right: 50px;
+  height: 40px;
+  padding-left: 15px;
+  font-family: inherit;
+  border-radius: 3px;
+}
+
+.form-input input:focus {
   outline: none;
   background-color: aliceblue;
 }
 
-/* Login Group */
-.button-container {
+.form-input .help-icon {
+  position: absolute;
+  right: 15px;
+  top: 12px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  opacity: 0.7;
 }
 
-.button-container > input {
-  font-family: "Palanquin";
-  font-size: 18px;
-  width: 250px;
-  height: 80px;
-  background-color: #6b73ac;
+.login-button-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   border: none;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
-.button-container > input:hover {
-  background-color: #6b73ff;
+.login-button-container input {
+  border-radius: 3px;
+  border: none;
+  background-color: #6b73ac;
+  font-family: inherit;
 }
-.button-container > input:active {
-  border-radius: 0px;
+.login-button {
+  flex-grow: 1;
+  height: 40px;
 }
 
 .redirect-container {
-  margin-left: 20px;
-  font-family: "Palanquin";
-  font-size: 16px;
-  font-weight: 200;
-  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 0.8rem;
+}
+
+.link a {
+  display: flex;
+  font-weight: 100;
+  color: black;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .login-main-container {
+    width: 90vw;
+  }
 }

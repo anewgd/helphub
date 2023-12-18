@@ -35,80 +35,96 @@ export default function Register() {
 
   return (
     <>
-      <div className="main-container">
-        <div className="register-logo-container">
+      <main className="register-container">
+        <section className="register-logo-container">
           <img src={logo} alt="helphub logo" />
-        </div>
-        <form className="registration-form">
-          <div className="grid">
+        </section>
+        <section className="register-content-container">
+          <form className="registration-form">
+            <h1>Create your account.</h1>
             <div className="registration-field-container">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First name"
-                onChange={(e) => handleChange(e)}
-                value={firstName}
-              />
+              <div className="register-input">
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First name"
+                  onChange={(e) => handleChange(e)}
+                  value={firstName}
+                />
+              </div>
             </div>
             <div className="registration-field-container">
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last name"
-                onChange={(e) => handleChange(e)}
-                value={lastName}
-              />
+              <div className="register-input">
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last name"
+                  onChange={(e) => handleChange(e)}
+                  value={lastName}
+                />
+              </div>
             </div>
             <div className="registration-field-container">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                onChange={(e) => handleChange(e)}
-                value={email}
-              />
+              <div className="register-input">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  onChange={(e) => handleChange(e)}
+                  value={email}
+                />
+              </div>
             </div>
             <div className="registration-field-container">
-              <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                onChange={(e) => handleChange(e)}
-                value={username}
-              />
+              <div className="register-input">
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Create username"
+                  onChange={(e) => handleChange(e)}
+                  value={username}
+                />
+              </div>
             </div>
             <div className="registration-field-container">
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={(e) => handleChange(e)}
-                value={password}
-              />
+              <div className="register-input">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Create password"
+                  onChange={(e) => handleChange(e)}
+                  value={password}
+                />
+              </div>
             </div>
             <div className="registration-field-container">
+              <div className="register-input">
+                <input
+                  type="password"
+                  name="secondPassword"
+                  placeholder="Re-enter password"
+                  onChange={(e) => handleChange(e)}
+                  value={secondPassword}
+                />
+              </div>
+            </div>
+            <div className="button-container">
               <input
-                type="password"
-                name="secondPassword"
-                placeholder="Re-enter password"
-                onChange={(e) => handleChange(e)}
-                value={secondPassword}
+                className="registration-button"
+                type="submit"
+                name="registration-btn"
+                value="Register"
+                //onClick={(e) => handleSubmit(e)}
               />
+            </div>
+          </form>
+          <div className="registration-redirect-container">
+            <div className="link">
+              <a href="/">Login to your account</a>
             </div>
           </div>
-          <div className="button-container">
-            <input
-              className="button"
-              type="submit"
-              value="Register"
-              //onClick={(e) => handleSubmit(e)}
-            />
-          </div>
-        </form>
-        <div className="registration-redirect-container">
-          <a href="/">Go to Login</a>
-        </div>
-      </div>
+        </section>
+      </main>
     </>
   );
 }
