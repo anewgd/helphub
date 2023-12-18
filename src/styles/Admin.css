@@ -3,7 +3,7 @@
   src: url("../fonts/Palanquin-Bold.ttf") format("truetype");
 }
 
-.admin-titleBar {
+/* .admin-titleBar {
   font-family: "Palanquin";
   font-size: 18px;
   display: flex;
@@ -70,14 +70,14 @@
   border-radius: 0px;
 }
 
-.admin-navBar {
+.navBar {
   display: flex;
   margin: 25px;
   align-items: center;
   justify-content: center;
 }
 
-.admin-navBar-button {
+.navBar-button {
   display: flex;
   margin: 10px;
   font-family: "Palanquin";
@@ -92,8 +92,8 @@
   justify-content: center;
 }
 
-.admin-navBar-button:hover {
+.adnavBar-button:hover {
   background-color: #1a2a55;
   color: white;
   cursor: pointer;
-}
+} */

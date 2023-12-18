@@ -72,7 +72,7 @@ export default function CreateUsers() {
           <div className="admin-CreateUsers-form-field">
             <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
               name="email"
               value={email}
               onChange={(e) => handleChange(e)}
@@ -118,7 +118,7 @@ export default function CreateUsers() {
               <option value="admin">Admin</option>
             </select>
           </div>
-          <div id="createUsers-button" className="admin-CreateUsers-form-field">
+          <div className="admin-CreateUsers-form-field">
             <input type="submit" value="Create user" />
           </div>
         </form>

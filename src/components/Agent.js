@@ -6,7 +6,7 @@ import { ticket } from "../db/schemas/ticket";
 import "../styles/Agent.css";
 
 import logo from "../icons/Logo.svg";
-import notification from "../icons/notification.svg";
+import { BiNotification, BiUserCircle } from "react-icons/bi";
 
 import ActiveTicket from "./ActiveTicket";
 import AllTickets from "./AllTickets";
@@ -81,51 +81,57 @@ export default function Agent() {
 
   return (
     <>
-      <div className="agent-titleBar">
-        <div className="agent-logo-container">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className="agent-title-container">Agent Page</div>
-        <div className="agent-notification-container">
-          <img src={notification} alt="notification icon" />
-        </div>
-        <div className="agent-account-container">
-          <h4>User's Name</h4>
-        </div>
-      </div>
-      <div className="agent-navBar">
-        <div
-          className="agent-navBar-button"
-          id="assignedTicketSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: assignedTicketSelected ? "#1a2a55" : "white",
-            color: assignedTicketSelected ? "white" : "black",
-          }}
-        >
-          Assigned Tickets
-        </div>
-        <div
-          className="agent-navBar-button"
-          id="allTicketsSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: allTicketsSelected ? "#1a2a55" : "white",
-            color: allTicketsSelected ? "white" : "black",
-          }}
-        >
-          All Tickets
-        </div>
-      </div>
-      <div>
-        {assignedTicketSelected ? (
-          <ActiveTicket />
-        ) : allTicketsSelected ? (
-          <AllTickets />
-        ) : (
-          <></>
-        )}
-      </div>
+      <main className="main-container">
+        <section className="header-section">
+          <div className="logo-container">
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="left">
+            <div className="notification-container">
+              <BiNotification size="2rem" />
+            </div>
+            <div className="account-container">
+              <BiUserCircle size="2rem" />
+            </div>
+          </div>
+        </section>
+        <section className="body-section">
+          <div className="navBar">
+            <div
+              className="navBar-button"
+              id="assignedTicketSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: assignedTicketSelected ? "#1a2a55" : "white",
+                color: assignedTicketSelected ? "white" : "black",
+              }}
+            >
+              Assigned Tickets
+            </div>
+            <div
+              className="navBar-button"
+              id="allTicketsSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: allTicketsSelected ? "#1a2a55" : "white",
+                color: allTicketsSelected ? "white" : "black",
+              }}
+            >
+              All Tickets
+            </div>
+          </div>
+          <div>
+            {assignedTicketSelected ? (
+              <ActiveTicket />
+            ) : allTicketsSelected ? (
+              <AllTickets />
+            ) : (
+              <></>
+            )}
+          </div>
+        </section>
+      </main>
+
       {/* // <div className="agent-container"> 
     {/* //   <h1>Agent Page</h1> 
 

@@ -6,29 +6,30 @@
 .client-ActiveTicket-searchbar-container {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  align-items: center;
+  /* margin: 0 auto; */
+  flex-direction: column;
 }
 
 .client-ActiveTicket-searchbar {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin: 10px 0 10px 0;
   align-items: center;
   border: solid 1px gray;
   border-radius: 5px;
-
   padding: 3px;
 }
 
 .client-ActiveTicket-searchbar > input {
+  width: 500px;
   font-family: "Palanquin";
-  font-size: 18px;
+  font-size: 0.85rem;
   margin-right: 5px;
-  width: 600px;
-  height: 40px;
+  height: 1.25rem;
   border: none;
   border-radius: 10px;
-  padding: 5px;
+  padding: none;
   background: transparent;
 }
 
@@ -40,9 +41,6 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid gray;
   margin: 5px;
   margin-left: 7px;
   border-radius: 5px;
@@ -57,22 +55,8 @@
   cursor: pointer;
 }
 
-.client-filter-type-container {
-  height: 40px;
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-.client-filter-type-container > select {
-  background: transparent;
-  font-family: "Palanquin";
-  font-size: 18px;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  margin-right: 5px;
-  padding: 2px;
-}
-
-.client-filter-type-container > select:focus {
-  outline: none;
+@media (width < 600px) {
+  .client-ActiveTicket-searchbar > input {
+    width: 100%;
+  }
 }

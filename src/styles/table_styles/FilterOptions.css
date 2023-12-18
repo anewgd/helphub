@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Palanquin";
+  src: url("../../fonts/Palanquin-Bold.ttf") format("truetype");
+}
+
+.client-filter-type-container {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.client-filter-type-container > select {
+  background: transparent;
+  font-family: "Palanquin";
+  font-size: 1rem;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 2px;
+}
+
+.client-filter-type-container > select:focus {
+  outline: none;
+}

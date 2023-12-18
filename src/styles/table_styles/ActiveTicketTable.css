@@ -3,80 +3,28 @@
   src: url("../../fonts/Palanquin-Bold.ttf") format("truetype");
 }
 
-table {
-  margin: 0 auto;
-}
-.table-container {
-  overflow: auto;
-  width: 1400px;
-  display: block;
-  margin: 0 auto;
-}
-
-.table-header {
-  overflow: auto;
-  margin: 0 auto;
-  margin-top: 20px;
-  display: flex;
-  width: 1400px;
-  background-color: #1a2a55;
-  justify-content: left;
-  border-radius: 5px;
-}
-
-.table-header > th {
-  overflow: auto;
-  position: relative;
-  width: 350px;
-  font-family: "Palanquin";
-  font-size: 14px;
-  color: white;
-}
-
-.resizer {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 5px;
-  background-color: #fff;
-  cursor: col-resize;
-  user-select: none;
-  touch-action: none;
-  border-radius: 6px;
-}
-
-.resizer.resizing {
-  background-color: green;
-  opacity: 1;
-}
-
-*:hover > .resizer {
-  opacity: 1;
-}
-
-.table-row {
-  padding: 3px;
-  display: flex;
-  margin: 10px 0;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-.table-row > td {
+.table-section {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.85rem;
   font-family: "Palanquin";
-  font-size: 14px;
-  width: 350px;
-}
-.table-row > td > p {
-  margin: 0;
 }
 
-.table-row:hover {
-  background-color: antiquewhite;
+.table-row {
+  width: 800px;
+  margin: 10px;
+  background-color: #c8c5e8;
+  border: 1px solid black;
+  font: inherit;
+  font-weight: 700;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+@media (width < 800px) {
+  .table-row {
+    width: auto;
+  }
 }

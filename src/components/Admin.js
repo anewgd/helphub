@@ -7,7 +7,7 @@ import { ticket } from "../db/schemas/ticket";
 import "../styles/Admin.css";
 
 import logo from "../icons/Logo.svg";
-import notification from "../icons/notification.svg";
+import { BiMenuAltRight, BiNotification, BiUserCircle } from "react-icons/bi";
 
 import ActiveTicket from "./ActiveTicket";
 import AllTickets from "./AllTickets";
@@ -21,6 +21,7 @@ export default function Admin() {
   const [message, setMessage] = useState("");
   const [selectedPriority, setPriority] = useState("");
   const [selectedAgent, setAgent] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
 
   const [assignTicketSelected, setAssignTicketSelected] = useState(true);
   const [activeTicketSelected, setActiveTicketSelected] = useState(false);
@@ -115,93 +116,106 @@ export default function Admin() {
     }
   };
 
+  const navIconClicked = () => {
+    console.log("Nav Icon Clicked!");
+    setIsMobile(!isMobile);
+  };
+
   return (
     <>
-      <div className="admin-titleBar">
-        <div className="admin-logo-container">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className="admin-title-container">Admin Page</div>
-        <div className="admin-notification-container">
-          <img src={notification} alt="notification icon" />
-        </div>
-        <div className="admin-account-container">
-          <h4>User's Name</h4>
-        </div>
-      </div>
+      <main className="main-container">
+        <section className="header-section">
+          <div className="logo-container">
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="left">
+            <div className="notification-container">
+              <BiNotification size="2rem" />
+            </div>
+            <div className="account-container">
+              <BiUserCircle size="2rem" />
+            </div>
+          </div>
+        </section>
+        <section className="body-section">
+          <nav id="navbar" className={`navBar ${isMobile ? "responsive" : ""}`}>
+            <div
+              className="navBar-button"
+              id="assignTicketSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: assignTicketSelected ? "#1a2a55" : "white",
+                color: assignTicketSelected ? "white" : "black",
+              }}
+            >
+              Assign Ticket
+            </div>
+            <div
+              className="navBar-button"
+              id="activeTicketSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: activeTicketSelected ? "#1a2a55" : "white",
+                color: activeTicketSelected ? "white" : "black",
+              }}
+            >
+              Active Tickets
+            </div>
+            <div
+              className="navBar-button"
+              id="allTicketsSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: allTicketsSelected ? "#1a2a55" : "white",
+                color: allTicketsSelected ? "white" : "black",
+              }}
+            >
+              All Tickets
+            </div>
+            <div
+              className="navBar-button"
+              id="createUsersSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: createUsersSelected ? "#1a2a55" : "white",
+                color: createUsersSelected ? "white" : "black",
+              }}
+            >
+              Create Users
+            </div>
+            <div
+              className="navBar-button"
+              id="dashboardSelected"
+              onClick={(e) => handleSelection(e)}
+              style={{
+                backgroundColor: dashboardSelected ? "#1a2a55" : "white",
+                color: dashboardSelected ? "white" : "black",
+              }}
+            >
+              Dashboard
+            </div>
+            {/* <div className="navBar-icon">
+              <BiMenuAltRight onClick={() => navIconClicked()} />
+            </div> */}
+          </nav>
+          <div>
+            {assignTicketSelected ? (
+              <AssignTicket />
+            ) : activeTicketSelected ? (
+              <ActiveTicket />
+            ) : allTicketsSelected ? (
+              <AllTickets />
+            ) : createUsersSelected ? (
+              <CreateUsers />
+            ) : dashboardSelected ? (
+              <Dashboard />
+            ) : (
+              <></>
+            )}
+          </div>
+        </section>
+      </main>
 
-      <div className="admin-navBar">
-        <div
-          className="admin-navBar-button"
-          id="assignTicketSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: assignTicketSelected ? "#1a2a55" : "white",
-            color: assignTicketSelected ? "white" : "black",
-          }}
-        >
-          Assign Ticket
-        </div>
-        <div
-          className="admin-navBar-button"
-          id="activeTicketSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: activeTicketSelected ? "#1a2a55" : "white",
-            color: activeTicketSelected ? "white" : "black",
-          }}
-        >
-          Active Tickets
-        </div>
-        <div
-          className="admin-navBar-button"
-          id="allTicketsSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: allTicketsSelected ? "#1a2a55" : "white",
-            color: allTicketsSelected ? "white" : "black",
-          }}
-        >
-          All Tickets
-        </div>
-        <div
-          className="admin-navBar-button"
-          id="createUsersSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: createUsersSelected ? "#1a2a55" : "white",
-            color: createUsersSelected ? "white" : "black",
-          }}
-        >
-          Create Users
-        </div>
-        <div
-          className="admin-navBar-button"
-          id="dashboardSelected"
-          onClick={(e) => handleSelection(e)}
-          style={{
-            backgroundColor: dashboardSelected ? "#1a2a55" : "white",
-            color: dashboardSelected ? "white" : "black",
-          }}
-        >
-          Dashboard
-        </div>
-      </div>
-      <div>
-        {assignTicketSelected ? (
-          <AssignTicket />
-        ) : activeTicketSelected ? (
-          <ActiveTicket />
-        ) : allTicketsSelected ? (
-          <AllTickets />
-        ) : createUsersSelected ? (
-          <CreateUsers />
-        ) : dashboardSelected ? (
-          <Dashboard />
-        ) : (
-          <></>
-        )}
-      </div>
       {/* <div className="admin-container">
         <h1>Admin Page</h1>
 
